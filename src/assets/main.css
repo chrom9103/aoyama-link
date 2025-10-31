@@ -1,0 +1,51 @@
+@import './base.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* スクロールバーの色を変更 */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2b2b2b #0f0f0f;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  border: 2px solid #0f0f0f;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3a3a3a;
+}

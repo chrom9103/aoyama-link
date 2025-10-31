@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: al-ingress
+spec:
+  ingressClassName: public
+  rules:
+    - host: www.chrom.jp
+      http:
+        paths:
+          - path: /a
+            pathType: Prefix
+            backend:
+              service:
+                name: al-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - www.chrom.jp
+      secretName: al-secret
